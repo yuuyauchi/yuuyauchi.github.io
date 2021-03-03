@@ -1,0 +1,47 @@
+swagger: "2.0"
+info:
+  description: "This is a description about how to use notification API made by YY. I am supposed to add functions as my skills develop. please look forward to additional functions!!!"
+  version: "1.0.0"
+  title: "Error Notification API"
+tags:
+- name: "room"
+  description: "Send a message to chatwork"
+paths:
+  /room/{roomname}/message:
+    post:
+      tags:
+      - "room"
+      summary: "Send a message to chatwork"
+
+      operationId: "yauchi"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "roomname"
+        in: "path"
+        description: "select a chatroom to send messages"
+        required: true
+        type: "integer"
+        maximum: 10.0
+        minimum: 1.0
+        format: "int64"
+      - name: "data"
+        in: "formData"
+        description: "Additional data to pass to server"
+        required: true
+        type: "string"
+      
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: |
+            error
+            responseCode: 400
+        "404":
+          description: |
+            error
+            responseCode: 404

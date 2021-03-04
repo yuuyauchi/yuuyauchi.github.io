@@ -45,4 +45,4 @@ paths:
         "404":
           description: |
             error
-            responseCode: 404
+            responseCode: 404git

@@ -3,6 +3,7 @@ info:
   description: "This is a description about how to use notification API made by YY. I am supposed to add functions as my skills develop. please look forward to additional functions!!!"
   version: "1.0.0"
   title: "Error Notification API"
+host: "118.27.5.59:8991"
 tags:
 - name: "room"
   description: "Send a message to chatwork"
@@ -28,9 +29,9 @@ paths:
         maximum: 10.0
         minimum: 1.0
         format: "int64"
-      - name: "data"
+      - name: "message"
         in: "formData"
-        description: "Additional data to pass to server"
+        description: "messages you want to send. please use a dictionary such as {'name':'Kai'} if you use requests.post()"
         required: true
         type: "string"
       
@@ -44,4 +45,4 @@ paths:
         "404":
           description: |
             error
-            responseCode: 404
+            responseCode: 404git
